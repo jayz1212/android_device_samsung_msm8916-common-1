@@ -335,39 +335,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
 
-# RIL
-ifeq ($(BOARD_PROVIDES_LIBRIL),true)
-    # Radio
-    PRODUCT_PACKAGES += \
-        init.carrier.rc \
-        init.link_ril_db.sh \
-        librmnetctl \
-        libshim_secril \
-        libxml2 \
-        macloader
-    
-    # Radio
-    PRODUCT_PROPERTY_OVERRIDES += \
-        persist.radio.add_power_save=1 \
-        persist.radio.apm_sim_not_pwdn=1 \
-        persist.radio.sib16_support=1
 
-    # RIL
-    PRODUCT_PROPERTY_OVERRIDES += \
-        persist.rild.nitz_long_ons_0="" \
-        persist.rild.nitz_long_ons_1="" \
-        persist.rild.nitz_long_ons_2="" \
-        persist.rild.nitz_long_ons_3="" \
-        persist.rild.nitz_plmn="" \
-        persist.rild.nitz_short_ons_0="" \
-        persist.rild.nitz_short_ons_1="" \
-        persist.rild.nitz_short_ons_2="" \
-        persist.rild.nitz_short_ons_3="" \
-        ril.subscription.types=NV,RUIM \
-        DEVICE_PROVISIONED=1 \
-        rild.libpath=/system/lib/libsec-ril.so \
-        ro.multisim.set_audio_params=true
-endif
 
 # Security configuration file
 PRODUCT_COPY_FILES += \

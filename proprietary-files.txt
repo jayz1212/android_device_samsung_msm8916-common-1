@@ -204,10 +204,7 @@ vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 vendor/lib/libxml.so
 
-# RIL
-lib/libaudio-ril.so
-lib/libsecril-client.so
-vendor/lib/libril-qcril-hook-oem.so
+
 
 # Samsung libs
 lib/libsecnativefeature.so
